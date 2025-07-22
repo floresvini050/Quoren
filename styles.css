@@ -1,0 +1,126 @@
+/* Cores Principais */
+:root {
+    --cor-fundo: #101040;
+    --cor-menu: #1a1a2e;
+    --cor-destaque: #4CAF50;
+    --cor-hover: #3b485f;
+    --cor-texto: #e0e0e0;
+}
+
+/* Layout Base */
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+/* Menu Lateral */
+.sidebar {
+    width: 250px;
+    background: var(--cor-menu);
+    padding: 20px;
+    height: 100vh;
+}
+
+.sidebar-header {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--cor-destaque);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#btn-nova-materia {
+    background: var(--cor-destaque);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btn-nova-materia:hover {
+    background: #43a047;
+}
+
+.materia-item {
+    background: #1f2937;
+    padding: 12px;
+    margin: 5px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.materia-item:hover {
+    background: var(--cor-hover);
+}
+
+.materia-item.active {
+    background: var(--cor-destaque);
+    color: #0a0a0a;
+    font-weight: bold;
+}
+
+/* Conteúdo Principal */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#area-grafico {
+    background: #030201;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    min-height: 400px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.materia-item {
+    /* Layout */
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    margin: 10px 0;
+    width: 100%;
+    text-align: left;
+    color: white;
+
+    /* Tipografia */
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+
+    /* Cores e bordas */
+    background: linear-gradient(145deg, #1f2937, #2d3748);
+    border: none;
+    border-radius: 10px;
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.1);
+
+    /* Transições */
+    transition: all 0.3s ease;
+    transform: translateY(0);
+    position: relative;
+    overflow: hidden;
+}
+
